@@ -30,13 +30,13 @@ URL
   -a, --allTampers      print(available tamper scripts list
 ```
 ## [*] Usage Examples
-### Creating a Tampered payloads list using : basePayload,max_tamperingChain_len,outputFileName
+#### Creating a Tampered payloads list using : basePayload,max_tamperingChain_len,outputFileName
 
-### Creating a Tampered payloads list with a restricted tampers list using : tampersListFile,basePayload,max_tamperingChain_len,outputFileName
+#### Creating a Tampered payloads list with a restricted tampers list using : tampersListFile,basePayload,max_tamperingChain_len,outputFileName
 
-### Single tamperChain using : basePayload,custom_tamperChain
+#### Single tamperChain using : basePayload,custom_tamperChain
 
-### Search mode of what chains produced the bypassing payloads
+#### Search mode of what chains produced the bypassing payloads
 This mode is used when you have bypassed the WAF using the produced payloadList and want to find out which chains produced the bypassing payloads. Useful to produce a better PoC or for reasearch purposes about the WAF Normalization Function.
 
 ## [*] Call for Contributors
