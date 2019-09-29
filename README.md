@@ -39,7 +39,7 @@ URL
 ### Search mode of what chains produced the bypassing payloads
 This mode is used when you have bypassed the WAF using the produced payloadList and want to find out which chains produced the bypassing payloads. Useful to produce a better PoC or for reasearch purposes about the WAF Normalization Function.
 
-# [*] Call for Contributors
+## [*] Call for Contributors
 Everyone interested in the development of this tool, please contact me on twitter or linkedin.
 
 **TODO LIST**:
@@ -49,10 +49,11 @@ Everyone interested in the development of this tool, please contact me on twitte
 
 **-** Add an option to specify which kind of vulnerability you want to exploit with the basePayload in order to create separate tampers lists for each vulnerability (this will reduce the number of payloads and requests sent to the WAF, the less you send the less you annoy)
 
-# thanks
-The tool What by Ahmed Aboul-Ela is used to perform subdomain enumeration.
-Check it out here: https://github.com/aboul3la/Sublist3r
-# [*] Author
+# A special thanks to WhatWaf
+It is a tool by EkultekThe used to detect a firewall on a web application, and attempting to detect a bypass.
+The Available tampering scripts used in this tool are taken from his tool.
+Check it out here: https://github.com/Ekultek/WhatWaf
+## [*] Author
 Lacerenza Francesco - Systems and Networks Security Student.
 twitter: [@lacerenza_fra](https://twitter.com/lacerenza_fra)
 linkedin: [lacerenzafrancesco](https://www.linkedin.com/in/francesco-lacerenza/)
