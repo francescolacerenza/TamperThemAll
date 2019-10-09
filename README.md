@@ -1,13 +1,13 @@
 # TamperThemAll
 A tampered payload generator to Fuzz Web Application Firewalls for Testing Fun and, why not, Bypassing.
 
-## [*] Know 'How and Why'
+### [*] Know 'How and Why'
 TTA takes in input a string representing your payload, it doen't matter what kind of vulnerability it exploits (SQLi, XSS, CMD Injection etc.), and gives back a payloads set with the input string chain-tampered in all the possible combinations and permutations.
 It's also created an associations file used to find out what chain produced a certain payload, useful function for the post exploitation phase in which you have a set of bypassing payloads and no idea of where they come from.
 Detailed Concept explained in the Medium article:
 URL
 
-## [*] CMD Options
+### [*] CMD Options
 ```
   -h, --help            show this help message and exit
   -p PAYLOAD, --payload PAYLOAD
@@ -29,17 +29,17 @@ URL
                         bypassing/payloadsFile,file.associations
   -a, --allTampers      print(available tamper scripts list
 ```
-## [*] Usage Examples
-#### Creating a Tampered payloads list using : basePayload,max_tamperingChain_len,outputFileName
+### [*] Usage Examples
+##### Creating a Tampered payloads list using : basePayload,max_tamperingChain_len,outputFileName
 
-#### Creating a Tampered payloads list with a restricted tampers list using : tampersListFile,basePayload,max_tamperingChain_len,outputFileName
+##### Creating a Tampered payloads list with a restricted tampers list using : tampersListFile,basePayload,max_tamperingChain_len,outputFileName
 
-#### Single tamperChain using : basePayload,custom_tamperChain
+##### Single tamperChain using : basePayload,custom_tamperChain
 
-#### Search mode of what chains produced the bypassing payloads
+##### Search mode of what chains produced the bypassing payloads
 This mode is used when you have bypassed the WAF using the produced payloadList and want to find out which chains produced the bypassing payloads. Useful to produce a better PoC or for reasearch purposes about the WAF Normalization Function.
 
-## [*] Call for Contributors
+### [*] Call for Contributors
 Everyone interested in the development of this tool, please contact me on twitter or linkedin.
 
 **TODO LIST**:
@@ -49,11 +49,11 @@ Everyone interested in the development of this tool, please contact me on twitte
 
 **-** Add an option to specify which kind of vulnerability you want to exploit with the basePayload in order to create separate tampers lists for each vulnerability (this will reduce the number of payloads and requests sent to the WAF, the less you send the less you annoy)
 
-# A special thanks to WhatWaf
+## A special thanks to WhatWaf
 It is a tool by EkultekThe used to detect a firewall on a web application, and attempting to detect a bypass.
 The Available tampering scripts used in this tool are taken from his tool.
 Check it out here: https://github.com/Ekultek/WhatWaf
-## [*] Author
+### [*] Author
 Lacerenza Francesco - Systems and Networks Security Student.
 twitter: [@lacerenza_fra](https://twitter.com/lacerenza_fra)
 linkedin: [lacerenzafrancesco](https://www.linkedin.com/in/francesco-lacerenza/)
