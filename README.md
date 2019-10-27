@@ -39,6 +39,8 @@ URL
 
 ##### Search mode of what chains produced the bypassing payloads
 This mode is used when you have bypassed the WAF using the produced payloadList and want to find out which chains produced the bypassing payloads. Useful to produce a better PoC or for reasearch purposes about the WAF Normalization Function.
+![searchMode](https://user-images.githubusercontent.com/25546186/67636050-b8442000-f8cc-11e9-98d6-e451acd4dc06.png)
+
 
 ### [*] Call for Contributors
 Everyone interested in the development of this tool, please contact me on twitter or linkedin.
