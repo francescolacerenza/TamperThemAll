@@ -15,7 +15,7 @@ def tamperIt(chain):
 	for tamper_script in chain:
 		try:
 			# limiting randomcomments usage on large payloads because it's useless and it causes Recursion limits exception
-			if tamper_script=="randomcomments" and len(payload) >=40: pass
+			if tamper_script=="randomcomments" and len(payload) >=25: pass
 			else:
 				payload=globals()[tamper_script](payload)
 		except Exception as e:
