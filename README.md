@@ -37,6 +37,7 @@ URL
 ![reducedTampers](https://user-images.githubusercontent.com/25546186/67636071-df9aed00-f8cc-11e9-88ff-6ded85249d22.png)
 
 ##### Single tamperChain using
+![chooseMode](https://user-images.githubusercontent.com/25546186/67636086-0eb15e80-f8cd-11e9-8f99-dd1249aeee02.png)
 
 ##### Search mode of what chains produced the bypassing payloads
 This mode is used when you have bypassed the WAF using the produced payloadList and want to find out which chains produced the bypassing payloads. Useful to produce a better PoC or for reasearch purposes about the WAF Normalization Function.
