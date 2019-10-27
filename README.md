@@ -14,7 +14,7 @@ URL
                         Base payload between single or double quotes (depends
                         on which kind of quotes the payload contains)
   -l CHAINLEN, --chainLen CHAINLEN
-                        max number of tampering methods to chaining.
+                        max number of tampering methods chained in a single tampering chain.
   -c CHAIN, --chain CHAIN
                         comma separated tampering chain, order matters (left
                         to right)
