@@ -1,5 +1,5 @@
 # TamperThemAll
-A tampered payload generator to Fuzz Web Application Firewalls for Testing Fun and, why not, Bypassing.
+A tampered payload generator to Fuzz Web Application Firewalls for Testing and Bypassing.
 
 ### [*] Know 'How and Why'
 TTA takes in input a string representing your payload, it doen't matter what kind of vulnerability it exploits (SQLi, XSS, CMD Injection etc.), and gives back a payloads set with the input string chain-tampered in all the possible combinations and permutations.
