@@ -31,6 +31,7 @@ URL
 ```
 ### [*] Usage Examples
 ##### Creating a Tampered payloads list using : basePayload,max_tamperingChain_len,outputFileName
+![unsageNormal](https://user-images.githubusercontent.com/25546186/67636036-964a9d80-f8cc-11e9-80f9-364f619d862e.png)
 
 ##### Creating a Tampered payloads list with a restricted tampers list using : tampersListFile,basePayload,max_tamperingChain_len,outputFileName
 
