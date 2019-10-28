@@ -5,7 +5,7 @@ A tampered payload generator to Fuzz Web Application Firewalls for Testing and B
 TTA takes in input a string representing your payload, it doen't matter what kind of vulnerability it exploits (SQLi, XSS, CMD Injection etc.), and gives back a payloads set with the input string chain-tampered in all the possible combinations and permutations.
 It's also created an associations file used to find out what chain produced a certain payload, useful function for the post exploitation phase in which you have a set of bypassing payloads and no idea of where they come from.
 Detailed Concept explained in the Medium article:
-URL
+https://medium.com/@thesauruss/a-payload-tamperer-for-waf-bypassing-tamperthemall-tta-ef35d43a608c
 
 ### [*] CMD Options
 ```
